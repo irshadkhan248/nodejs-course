@@ -2,6 +2,7 @@ const express = require("express");
 const geocode = require("./utils/geocode");
 const weatherFinder = require("./utils/weatherFinder");
 const app = express();
+const port=process.env.PORT || 3000
 var path = require("path");
 const hbs = require("hbs");
 const routePath = path.join(__dirname, "../public");
@@ -87,6 +88,6 @@ app.get("*", (req, res) => {
     name: "irshad",
   });
 });
-app.listen(3000, () => {
-  console.log("server started at port 3000");
+app.listen(port, () => {
+  console.log("server started at port `${port}`");
 });
